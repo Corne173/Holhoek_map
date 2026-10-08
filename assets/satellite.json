@@ -1,0 +1,22 @@
+{
+  "bounds": [
+    [
+      -28.457,
+      27.995
+    ],
+    [
+      -28.388,
+      28.07
+    ]
+  ],
+  "attribution": "Contains modified Copernicus Sentinel data 2026. Source: ESA / Copernicus; COGs: Element 84 / AWS Open Data.",
+  "acquired": "2026-05-20T08:18:04.845000Z",
+  "sceneId": "S2B_35JNJ_20260520_0_L2A",
+  "resolutionMeters": 10,
+  "sourceUrl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/35/J/NJ/2026/5/S2B_35JNJ_20260520_0_L2A/TCI.tif",
+  "projection": "EPSG:3857",
+  "width": 1024,
+  "height": 1071,
+  "imageSha256": "4a659de2cb695a28a0970fb013fcf335f251e58452834dc8a8bbc7b42012f814",
+  "licenseUrl": "https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice"
+}

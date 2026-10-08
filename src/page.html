@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#233d32">
+  <meta name="description" content="An offline guide to the Day 1 and Day 2 hiking trails at Holhoek.">
+  <title>Holhoek · Offline trail guide</title>
+  <style>__LEAFLET_CSS__</style>
+  <style>__APP_CSS__</style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" aria-label="Trail guide">
+      <header class="brand">
+        <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M4 35 19 10l9 16 5-9 12 18H4Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="m13 20 6 4 5-5M29 24l4 3 4-3M5 41h40" stroke="currentColor" stroke-width="1.5"/></svg>
+        <div><span class="brand-name">HOLHOEK</span><span class="brand-subtitle">THE TRAIL GUIDE</span></div>
+        <button id="help-button" class="icon-button help-button" aria-label="How to use the offline map">?</button>
+      </header>
+      <section class="intro"><p class="eyebrow">EXPLORE AT YOUR OWN PACE</p><h1>Out here.<br>Still connected.</h1><p class="intro-copy">Your trails and waypoints, ready to go off the grid.</p></section>
+      <section class="route-section" aria-label="Choose trails">
+        <div class="section-title"><h2>The trails</h2><button id="fit-all" class="text-button">Show all</button></div>
+        <div class="routes">
+          <button id="toggle-day1" class="route-card" data-route="day1" aria-pressed="true"><span class="route-swatch day1"></span><span class="route-copy"><strong>Day 1</strong><span><span id="distance-day1">—</span> km · 15 stops</span></span><span class="route-check" aria-hidden="true">✓</span></button>
+          <button id="toggle-day2" class="route-card" data-route="day2" aria-pressed="true"><span class="route-swatch day2"></span><span class="route-copy"><strong>Day 2</strong><span><span id="distance-day2">—</span> km · 4 stops</span></span><span class="route-check" aria-hidden="true">✓</span></button>
+        </div>
+      </section>
+      <section class="waypoint-section" aria-label="Waypoint list">
+        <button id="waypoint-toggle" class="waypoint-heading" aria-expanded="false" aria-controls="waypoint-content"><span>Along the way <span id="waypoint-count" class="count">19</span></span><span class="expand-icon" aria-hidden="true">⌃</span></button>
+        <div id="waypoint-content" class="waypoint-content">
+          <label class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="1.7"/><path d="m15 15 5 5" stroke="currentColor" stroke-width="1.7"/></svg><input id="search" type="search" placeholder="Find a waypoint…" aria-label="Search waypoints" autocomplete="off"></label>
+          <div id="waypoint-list" class="waypoint-list"></div>
+        </div>
+      </section>
+      <footer class="sidebar-footer"><span class="small-dot"></span> Made to travel with you <span class="version-label">FIELD EDITION 01</span></footer>
+    </aside>
+    <main class="map-area" aria-label="Interactive trail map">
+      <div id="map" role="region" aria-label="Holhoek map. Drag to pan and use plus or minus to zoom."></div>
+      <div class="map-header"><div class="map-title"><span class="eyebrow">HOLHOEK, SOUTH AFRICA</span><span id="basemap-label">Offline trail map</span></div><button id="offline-button" class="offline-badge"><span class="small-dot"></span><span id="offline-label">MAP INCLUDED</span><svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10m-4-4 4 4 4-4M4 15v2h12v-2" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></button></div>
+      <div class="map-tools"><button id="locate" class="map-tool" aria-label="Show my location" title="Show my location"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="2" fill="currentColor"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4" stroke="currentColor" stroke-width="1.6"/></svg></button><button id="fit-map" class="map-tool" aria-label="Fit both trails on the map" title="Fit both trails"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 3H3v6m12-6h6v6M3 15v6h6m6 0h6v-6" stroke="currentColor" stroke-width="1.6"/></svg></button><button id="layers-button" class="map-tool" aria-expanded="false" aria-controls="layers-panel" aria-label="Map layers" title="Map layers"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 3 10 6-10 6L2 9l10-6Zm-9 11 9 5 9-5M3 18l9 5 9-5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></button></div>
+      <section id="layers-panel" class="layers-panel" aria-label="Extra map layers" hidden><h2>On the map</h2><label><input id="layer-water" type="checkbox"> Water points</label><label><input id="layer-landmarks" type="checkbox" checked> Fossil landmarks</label><label><input id="layer-roads" type="checkbox"> Service roads</label><label><input id="layer-secondary" type="checkbox"> Other route from KMZ</label><p>Names and locations come from your KMZ. Water quality and route accessibility are unverified.</p></section>
+      <div id="map-note" class="map-note"><span class="note-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 13 13 3M3 3h10v10" stroke="currentColor" stroke-width="1.4"/></svg></span><div><strong>Every turn, already on your phone.</strong><span id="map-note-copy">Routes and pins work offline. Satellite imagery is not included yet.</span></div><button id="dismiss-note" class="note-close" aria-label="Dismiss map note">×</button></div>
+      <div id="location-status" class="location-status" role="status" hidden></div>
+      <section id="detail" class="detail-card" aria-label="Selected waypoint" hidden><button id="close-detail" class="detail-close" aria-label="Close waypoint details">×</button><div id="detail-photo" class="detail-photo"></div><div class="detail-body"><p id="detail-category" class="eyebrow"></p><h2 id="detail-name"></h2><p id="detail-description"></p><div class="coordinate-row"><span id="detail-coordinates"></span><button id="copy-coordinates" class="text-button">Copy</button></div><button id="detail-zoom" class="detail-action">Zoom to waypoint <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13 13 3M3 3h10v10" stroke="currentColor" stroke-width="1.4"/></svg></button></div></section>
+      <div id="toast" class="toast" role="status" hidden></div>
+    </main>
+  </div>
+  <dialog id="help-dialog" aria-labelledby="help-title"><button id="close-help" class="dialog-close icon-button" aria-label="Close offline guide">×</button><p class="eyebrow">BEFORE YOU SET OFF</p><h2 id="help-title">A little preparation.<br>A lot of exploring.</h2><p>This HTML file contains the trails, pins, and map controls. Download it while you have reception, then open it in a browser. No account is needed.</p><div class="help-block"><strong>Take it offline</strong><p id="offline-help">The downloaded HTML works without internet. On a hosted copy, use “Save for offline” on this device before leaving reception. Browser storage can be cleared, so reopen the map in airplane mode before you set off.</p><button id="save-offline" class="primary-button">Save for offline</button><p id="offline-status" role="status"></p><a id="download-guide" class="download-link" href="./Holhoek-offline.html" download="Holhoek-offline.html">Download the single HTML file</a></div><div class="help-block"><strong>Your location</strong><p>Your phone’s GPS can work without mobile reception. Allow location access when asked. This is most reliable on the secure hosted version; local HTML files are restricted by some phone browsers. Your position stays on your device.</p></div><div class="help-block"><strong id="imagery-help-title">A trail map for now</strong><p id="imagery-help">Satellite imagery and waypoint photos are not included in this edition. The map uses your KMZ routes and coordinates. Distances are approximate lengths of the drawn routes.</p></div><p class="help-footnote">Check the map on your phone before your hike. Trail conditions and access can change; this guide does not provide turn-by-turn navigation.</p></dialog>
+  <script id="map-data" type="application/json">__MAP_DATA__</script>
+  <script id="imagery-data" type="application/json">__IMAGERY_DATA__</script>
+  <script>__LEAFLET_JS__</script>
+  <script>__APP_JS__</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+{
+  "sourceFile": "Holhoek.kmz",
+  "sourceSha256": "7763424fd413d5ae422d104cf07145bbde0321b9aaac7cf22a2f766f776e51a7",
+  "kmlMember": "doc.kml",
+  "featureCount": 57,
+  "geometryCounts": {
+    "LineString": 12,
+    "Point": 45
+  },
+  "categoryCounts": {
+    "facility": 2,
+    "landmark": 2,
+    "main-trail": 2,
+    "other": 13,
+    "secondary-trail": 1,
+    "service-road": 8,
+    "trail-waypoint": 19,
+    "water": 10
+  },
+  "coordinateCount": 1600,
+  "bounds": [28.01021030736239, -28.44062684014847, 28.05400666270992, -28.40277361873238],
+  "altitude": {
+    "coordinateCount": 1600,
+    "missingCount": 0,
+    "min": 0,
+    "max": 0,
+    "quality": "all zero; no usable elevation data"
+  },
+  "photoCount": 0,
+  "describedFeatureCount": 0,
+  "trails": {
+    "day1": {
+      "name": "Day 1",
+      "distanceKm": 10.687071,
+      "lineCount": 1,
+      "waypointCount": 15,
+      "numberedWaypointCount": 15,
+      "waypointNumbers": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+      "lineFeatureIds": ["day-1-0910e1f477"],
+      "coordinateCount": 527,
+      "startCoordinate": [28.03428134628312, -28.41852788461751, 0],
+      "endCoordinate": [28.03404223845781, -28.41902467074755, 0],
+      "endToStartGapMeters": 60.0,
+      "firstNumberedWaypointToLineStartMeters": 170.6,
+      "lastNumberedWaypointToLineEndMeters": 500.4,
+      "maximumNumberedWaypointDistanceFromLineMetersApprox": 7.3
+    },
+    "day2": {
+      "name": "Day 2",
+      "distanceKm": 6.646925,
+      "lineCount": 1,
+      "waypointCount": 4,
+      "numberedWaypointCount": 4,
+      "waypointNumbers": [16, 17, 18, 19],
+      "lineFeatureIds": ["day-2-eca083e2bd"],
+      "coordinateCount": 243,
+      "startCoordinate": [28.03404860288104, -28.41901241896557, 0],
+      "endCoordinate": [28.03406978089543, -28.41902778432754, 0],
+      "endToStartGapMeters": 2.7,
+      "firstNumberedWaypointToLineStartMeters": 1422.8,
+      "lastNumberedWaypointToLineEndMeters": 685.3,
+      "maximumNumberedWaypointDistanceFromLineMetersApprox": 1.5
+    }
+  },
+  "distanceMethod": "Sum of WGS84 coordinate haversine segments on a sphere of radius 6371.0088 km; excludes elevation and is not a surveyed distance.",
+  "sourceNotes": ["Original feature names, folder hierarchy, coordinate decimal precision, and geometry are preserved.", "Source waypoint numbers are retained; they do not establish travel direction.", "Numbered waypoints may lie between route endpoints; their distances to endpoints do not indicate route gaps.", "Route lines are not snapped, extended, or closed during import.", "A source label for water or wheelchair use does not verify drinking-water safety or accessibility.", "Embedded image references, if present, are not imported as photos automatically."],
+  "day1EndToDay2StartMeters": 1.5
+}
